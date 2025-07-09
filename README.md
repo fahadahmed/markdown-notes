@@ -5,6 +5,10 @@ This repo is an exercise to learn about Express and Node.js and how they can be 
 To run the project, please clone the repository locally and follow the below steps:
 
 ```bash
+// install the packages
 $ pnpm install
+// start the dev server
 $ pnpm run dev
+// run prettier formatting
+$ pnpm run format
 ```
