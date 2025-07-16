@@ -1,6 +1,6 @@
-import { describe, it, beforeEach, vi, expect } from 'vitest'
-import request from 'supertest'
 import express from 'express'
+import request from 'supertest'
+import { describe, it, beforeEach, vi, expect } from 'vitest'
 import notesRouter from './notes.ts'
 import db from '../db/notes.ts'
 
