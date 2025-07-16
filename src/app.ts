@@ -1,5 +1,5 @@
 import express from 'express'
-import notesRouter from './routes/notes'
+import notesRouter from './routes/notes.ts'
 
 const app = express()
 app.get('/', (req, res) => {
