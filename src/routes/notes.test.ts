@@ -23,7 +23,6 @@ vi.mock('uuid', () => ({
   v4: () => 'test-uuid',
 }))
 
-
 const app = express()
 app.use(express.json())
 app.use(notesRouter)

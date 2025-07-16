@@ -7,7 +7,7 @@ export default defineConfig({
     includeSource: ['src/**/*.ts'],
     coverage: {
       reporter: ['text', 'html'],
-    }
+    },
   },
   esbuild: {
     target: 'esnext',
