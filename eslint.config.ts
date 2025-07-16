@@ -1,6 +1,6 @@
+import tseslint from 'typescript-eslint';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
-import tseslint from 'typescript-eslint';
 
 export default [
   {
@@ -14,8 +14,9 @@ export default [
       import: eslintPluginImport,
       'unused-imports': eslintPluginUnusedImports,
     },
+    // Spread the recommended config and override/add rules
+    ...tseslint.configs.recommended,
     rules: {
-      ...tseslint.configs.recommended.rules,
       'unused-imports/no-unused-imports': 'warn',
       'import/order': [
         'warn',
