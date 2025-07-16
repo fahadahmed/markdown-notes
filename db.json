@@ -6,6 +6,13 @@
       "content": "This is the first note for the app",
       "createdAt": "2025-07-09T03:25:15.799Z",
       "updatedAt": "2025-07-09T03:25:15.799Z"
+    },
+    {
+      "id": "767f078b-0f54-42da-8071-a551ecc0439d",
+      "title": "Second Note",
+      "content": "This is the second note",
+      "createdAt": "2025-07-16T02:41:50.855Z",
+      "updatedAt": "2025-07-16T02:41:50.855Z"
     }
   ]
 }

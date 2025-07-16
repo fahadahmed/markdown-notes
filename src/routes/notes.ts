@@ -1,7 +1,7 @@
 import express from 'express'
 import { v4 as uuid } from 'uuid'
-import db from '../db/notes'
-import logger from '../utils/logger'
+import db from '../db/notes.js'
+import logger from '../utils/logger.js'
 
 const router = express.Router()
 
@@ -28,7 +28,7 @@ router.post('/notes', async (req, res) => {
 })
 
 router.get('/notes/:id', async (req, res) => {
-  const note = db.data!.notes.find((n) => n.id === req.params.id)
+  const note = db.data!.notes.find((n: any) => n.id === req.params.id)
   if (!note) {
     logger.warn(`Note with id ${req.params.id} not found`)
     return res.status(404).json({ error: 'Note not found' })
@@ -38,7 +38,7 @@ router.get('/notes/:id', async (req, res) => {
 })
 
 router.put('/notes/:id', async (req, res) => {
-  const noteIndex = db.data!.notes.findIndex((n) => n.id === req.params.id)
+  const noteIndex = db.data!.notes.findIndex((n: any) => n.id === req.params.id)
   if (noteIndex === -1) {
     logger.warn(`Note with id ${req.params.id} not found for update`)
     return res.status(404).json({ error: 'Note not found' })
@@ -57,9 +57,9 @@ router.put('/notes/:id', async (req, res) => {
 })
 
 router.delete('/notes/:id', async (req, res) => {
-  const noteIndex = db.data!.notes.findIndex((n) => n.id === req.params.id)
+  const noteIndex = db.data!.notes.findIndex((n: any) => n.id === req.params.id)
   if (noteIndex === -1) {
-    logger.warn(`Note with id ${req.params.id} not found for deletion`)
+    logger.error(`Note with id ${req.params.id} not found for deletion`)
     return res.status(404).json({ error: 'Note not found' })
   }
 
