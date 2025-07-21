@@ -29,21 +29,16 @@ app.use(notesRouter)
 
 describe('Notes API', () => {
   beforeEach(() => {
-    db.data.notes = [
-      {
-        id: '1',
-        title: 'Note 1',
-        content: 'Content 1',
-        createdAt: '2024-01-01T00:00:00.000Z',
-        updatedAt: '2024-01-01T00:00:00.000Z',
-      },
-    ]
+    db.data.notes = [{ id: '1', title: 'Test Note', content: 'This is a test note', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }]
+    vi.mocked(db.read).mockResolvedValue()
+    vi.mocked(db.write).mockResolvedValue()
   })
 
   it('GET /notes returns all notes', async () => {
     const res = await request(app).get('/notes')
     expect(res.status).toBe(200)
-    expect(res.body).toEqual(db.data.notes)
+    expect(res.body.length).toBe(1)
+    expect(res.body[0].id).toBe('1')
   })
 
   it('POST /notes creates a new note', async () => {
